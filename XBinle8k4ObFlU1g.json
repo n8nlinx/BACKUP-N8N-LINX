@@ -1,0 +1,184 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Execute Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-18T23:28:51.711Z",
+  "id": "XBinle8k4ObFlU1g",
+  "isArchived": false,
+  "meta": null,
+  "name": "GetTokenLinx",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "fb6d24fe-aee5-428d-8e43-114120744d83",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://sa-hg-sys.appspot.com/partner/login",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "login",
+              "value": "ti.linx"
+            },
+            {
+              "name": "password",
+              "value": "$_25@vIt946"
+            },
+            {
+              "name": "countryId",
+              "value": "76"
+            },
+            {
+              "name": "goal",
+              "value": "web southamerica"
+            },
+            {
+              "name": "appId",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        0
+      ],
+      "id": "8e084ebb-70c1-4cf9-b208-ea9f7dd38824",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "auvkqMJp2sZrEpyY",
+          "mode": "list",
+          "cachedResultName": "GetTokenGrupo"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "tokenLinx": "={{ $json.payload.token }}"
+          },
+          "matchingColumns": [
+            "tokenLinx"
+          ],
+          "schema": [
+            {
+              "id": "tokenLinx",
+              "displayName": "tokenLinx",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        640,
+        0
+      ],
+      "id": "df99cd6c-600a-4e1e-8e6a-c257cd83babc",
+      "name": "Execute Workflow"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7638ee47-ddde-40b3-8253-0e425a3b204c",
+              "name": "payload.token",
+              "value": "={{ $json.payload.token }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        440,
+        0
+      ],
+      "id": "08cbd8b3-1f05-4fde-88d6-f9e42dd62537",
+      "name": "Edit Fields"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "n8nlinx",
+    "name": "BACKUP-N8N-LINX"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-18T23:28:51.711Z",
+      "updatedAt": "2025-09-18T23:28:51.711Z",
+      "role": "workflow:owner",
+      "workflowId": "XBinle8k4ObFlU1g",
+      "projectId": "TmFnoQznpXwjPM3P"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-19T13:50:51.014Z",
+  "versionId": "10be9caf-b0b4-41bc-a20c-54af9362cdc7"
+}
