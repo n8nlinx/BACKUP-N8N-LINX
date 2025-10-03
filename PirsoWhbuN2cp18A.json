@@ -1,1 +1,422 @@
-{"active":false,"connections":{"If":{"main":[[{"node":"Convert to File","type":"main","index":0}],[{"node":"NOK - Envia e-mail","type":"main","index":0}]]},"Convert to File":{"main":[[{"node":"Extract from File","type":"main","index":0}]]},"Extract from File":{"main":[[{"node":"Confirmação de Exportação","type":"main","index":0}]]},"BD Autoshop":{"main":[[{"node":"E-mail de confirmação de Conversão","type":"main","index":0}]]},"Validação da Exportação":{"main":[[{"node":"Confirmação de Arquivos OK","type":"main","index":0}],[{"node":"IA Tenta resolver","type":"main","index":0}]]},"Confirmação de Arquivos OK":{"main":[[{"node":"BD Autoshop","type":"main","index":0}]]},"Confirmação de Exportação":{"main":[[{"node":"Validação da Exportação","type":"main","index":0}]]},"NOK - Envia e-mail":{"main":[[{"node":"Valida Dados enviados","type":"main","index":0}]]},"IA Análise de Dados":{"main":[[{"node":"If","type":"main","index":0}]]},"Valida Dados enviados":{"main":[[{"node":"IA Análise de Dados","type":"main","index":0}]]},"Conversão de Dados":{"main":[[{"node":"Valida Dados enviados","type":"main","index":0}]]},"IA Tenta resolver":{"main":[[{"node":"Confirmação de Arquivos OK","type":"main","index":0}]]}},"createdAt":"2025-08-04T20:56:37.244Z","id":"PirsoWhbuN2cp18A","isArchived":false,"meta":{"***REMOVIDO***":true},"name":"Test Workflow","nodes":[{"parameters":{"conditions":{"options":{"caseSensitive":true,"leftValue":"","typeValidation":"strict","version":2},"conditions":[{"id":"4704bb40-17d3-49e8-8b2a-157f87c44d1e","leftValue":"","rightValue":"","operator":{"type":"string","operation":"equals","name":"filter.operator.equals"}}],"combinator":"and"},"options":{}},"type":"n8n-nodes-base.if","typeVersion":2.2,"position":[660,0],"id":"2eb13036-cc53-4dcf-b5ae-7818caea6da9","name":"If"},{"parameters":{"options":{}},"type":"n8n-nodes-base.convertToFile","typeVersion":1.1,"position":[880,-100],"id":"b86e07fd-0ee9-41b1-af73-936469d9d609","name":"Convert to File"},{"parameters":{"options":{}},"type":"n8n-nodes-base.extractFromFile","typeVersion":1,"position":[1100,-100],"id":"87d1bfc2-9c0f-444a-940b-c356f7d274b1","name":"Extract from File"},{"parameters":{"additionalFields":{}},"type":"n8n-nodes-base.microsoftOutlook","typeVersion":2,"position":[2300,-300],"id":"c2d82c67-fc48-4467-9f92-a53183c15779","name":"E-mail de confirmação de Conversão","webhookId":"90436e7b-7140-40aa-9036-885095d655b8"},{"parameters":{},"type":"n8n-nodes-oracle-integration.***REMOVIDO***","typeVersion":1,"position":[2060,-300],"id":"c7b5fdcf-adf7-4a9d-bc77-c58db246d0f0","name":"BD Autoshop"},{"parameters":{"conditions":{"options":{"caseSensitive":true,"leftValue":"","typeValidation":"strict","version":2},"conditions":[{"id":"6fa6fd57-8717-4066-af32-4f836989507b","leftValue":"","rightValue":"","operator":{"type":"string","operation":"equals","name":"filter.operator.equals"}}],"combinator":"and"},"options":{}},"type":"n8n-nodes-base.if","typeVersion":2.2,"position":[1540,-100],"id":"df5d15bd-b65c-4d72-8862-13a8f731c064","name":"Validação da Exportação"},{"parameters":{"operation":"sendAndWait","options":{}},"type":"n8n-nodes-base.microsoftOutlook","typeVersion":2,"position":[1820,-300],"id":"7edcb380-d9d1-4da3-85f5-38e4870e2ac4","name":"Confirmação de Arquivos OK","webhookId":"ce964944-6f42-42fe-b9ae-bd4636cddcdc"},{"parameters":{"additionalFields":{}},"type":"n8n-nodes-base.microsoftOutlook","typeVersion":2,"position":[1320,-100],"id":"e5b4de09-e91a-47ef-8ca6-0e82f5c016a3","name":"Confirmação de Exportação","webhookId":"f5f0ca3c-ba0d-4d24-91bf-b233a7aa416b"},{"parameters":{"additionalFields":{}},"type":"n8n-nodes-base.microsoftOutlook","typeVersion":2,"position":[880,100],"id":"c147201c-7e7f-4d43-be47-20a81b2ec5b1","name":"NOK - Envia e-mail","webhookId":"b6cddf14-e925-475a-a784-bc30bef25b80"},{"parameters":{"resource":"assistant","operation":"list"},"type":"@n8n/n8n-nodes-langchain.openAi","typeVersion":1.8,"position":[440,0],"id":"61fbd678-cc90-4538-af2c-f65caf7318f6","name":"IA Análise de Dados"},{"parameters":{"operation":"search"},"type":"n8n-nodes-base.microsoftOneDrive","typeVersion":1,"position":[220,0],"id":"5f2a5482-fcba-472d-ace7-1b3e8d933e22","name":"Valida Dados enviados"},{"parameters":{"rule":{"interval":[{}]}},"type":"n8n-nodes-base.scheduleTrigger","typeVersion":1.2,"position":[0,0],"id":"eede7b96-d190-4744-8399-e6d2641c06eb","name":"Conversão de Dados"},{"parameters":{"options":{}},"type":"@n8n/n8n-nodes-langchain.agent","typeVersion":1.9,"position":[2180,100],"id":"7c9d9b88-276f-4fb4-a6c5-5af48054519b","name":"IA Tenta resolver"}],"origin":"n8n","pinData":{},"repo":{"owner":"n8nlinx","name":"BACKUP-N8N-LINX"},"settings":{"executionOrder":"v1"},"shared":[{"createdAt":"2025-08-13T11:47:37.939Z","updatedAt":"2025-08-13T11:47:37.939Z","role":"workflow:editor","workflowId":"PirsoWhbuN2cp18A","projectId":"6BfmMRJLOdGxZIzn"},{"createdAt":"2025-08-04T20:56:37.244Z","updatedAt":"2025-08-04T20:56:37.244Z","role":"workflow:owner","workflowId":"PirsoWhbuN2cp18A","projectId":"MuY51VcOvvTiGkBJ"}],"staticData":null,"tags":[{"createdAt":"2025-08-06T18:41:02.436Z","updatedAt":"2025-08-06T18:41:02.436Z","id":"CnAWaNQFQydZCLwm","name":"conversão"},{"createdAt":"2025-08-06T18:41:05.219Z","updatedAt":"2025-08-06T18:41:05.219Z","id":"JI0xrBzLNHeMNIXf","name":"autoshop"}],"triggerCount":0,"updatedAt":"2025-08-07T14:09:33.024Z","versionId":"4533349f-22e7-482c-9ae4-9dd1d508bc9f"}
+{
+  "active": false,
+  "connections": {
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "NOK - Envia e-mail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Confirmação de Exportação",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BD Autoshop": {
+      "main": [
+        [
+          {
+            "node": "E-mail de confirmação de Conversão",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validação da Exportação": {
+      "main": [
+        [
+          {
+            "node": "Confirmação de Arquivos OK",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "IA Tenta resolver",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Confirmação de Arquivos OK": {
+      "main": [
+        [
+          {
+            "node": "BD Autoshop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Confirmação de Exportação": {
+      "main": [
+        [
+          {
+            "node": "Validação da Exportação",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NOK - Envia e-mail": {
+      "main": [
+        [
+          {
+            "node": "Valida Dados enviados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IA Análise de Dados": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Valida Dados enviados": {
+      "main": [
+        [
+          {
+            "node": "IA Análise de Dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Conversão de Dados": {
+      "main": [
+        [
+          {
+            "node": "Valida Dados enviados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IA Tenta resolver": {
+      "main": [
+        [
+          {
+            "node": "Confirmação de Arquivos OK",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-04T20:56:37.244Z",
+  "id": "PirsoWhbuN2cp18A",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Test Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "4704bb40-17d3-49e8-8b2a-157f87c44d1e",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        660,
+        0
+      ],
+      "id": "2eb13036-cc53-4dcf-b5ae-7818caea6da9",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        880,
+        -100
+      ],
+      "id": "b86e07fd-0ee9-41b1-af73-936469d9d609",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        -100
+      ],
+      "id": "87d1bfc2-9c0f-444a-940b-c356f7d274b1",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        2300,
+        -300
+      ],
+      "id": "c2d82c67-fc48-4467-9f92-a53183c15779",
+      "name": "E-mail de confirmação de Conversão",
+      "webhookId": "90436e7b-7140-40aa-9036-885095d655b8"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-oracle-integration.oracleDatabaseWithParameterization",
+      "typeVersion": 1,
+      "position": [
+        2060,
+        -300
+      ],
+      "id": "c7b5fdcf-adf7-4a9d-bc77-c58db246d0f0",
+      "name": "BD Autoshop"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6fa6fd57-8717-4066-af32-4f836989507b",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1540,
+        -100
+      ],
+      "id": "df5d15bd-b65c-4d72-8862-13a8f731c064",
+      "name": "Validação da Exportação"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        1820,
+        -300
+      ],
+      "id": "7edcb380-d9d1-4da3-85f5-38e4870e2ac4",
+      "name": "Confirmação de Arquivos OK",
+      "webhookId": "ce964944-6f42-42fe-b9ae-bd4636cddcdc"
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        1320,
+        -100
+      ],
+      "id": "e5b4de09-e91a-47ef-8ca6-0e82f5c016a3",
+      "name": "Confirmação de Exportação",
+      "webhookId": "f5f0ca3c-ba0d-4d24-91bf-b233a7aa416b"
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        880,
+        100
+      ],
+      "id": "c147201c-7e7f-4d43-be47-20a81b2ec5b1",
+      "name": "NOK - Envia e-mail",
+      "webhookId": "b6cddf14-e925-475a-a784-bc30bef25b80"
+    },
+    {
+      "parameters": {
+        "resource": "assistant",
+        "operation": "list"
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        440,
+        0
+      ],
+      "id": "61fbd678-cc90-4538-af2c-f65caf7318f6",
+      "name": "IA Análise de Dados"
+    },
+    {
+      "parameters": {
+        "operation": "search"
+      },
+      "type": "n8n-nodes-base.microsoftOneDrive",
+      "typeVersion": 1,
+      "position": [
+        220,
+        0
+      ],
+      "id": "5f2a5482-fcba-472d-ace7-1b3e8d933e22",
+      "name": "Valida Dados enviados"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "eede7b96-d190-4744-8399-e6d2641c06eb",
+      "name": "Conversão de Dados"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        2180,
+        100
+      ],
+      "id": "7c9d9b88-276f-4fb4-a6c5-5af48054519b",
+      "name": "IA Tenta resolver"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "n8nlinx",
+    "name": "BACKUP-N8N-LINX"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-13T11:47:37.939Z",
+      "updatedAt": "2025-08-13T11:47:37.939Z",
+      "role": "workflow:editor",
+      "workflowId": "PirsoWhbuN2cp18A",
+      "projectId": "6BfmMRJLOdGxZIzn"
+    },
+    {
+      "createdAt": "2025-08-04T20:56:37.244Z",
+      "updatedAt": "2025-08-04T20:56:37.244Z",
+      "role": "workflow:owner",
+      "workflowId": "PirsoWhbuN2cp18A",
+      "projectId": "MuY51VcOvvTiGkBJ"
+    }
+  ],
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-08-06T18:41:02.436Z",
+      "updatedAt": "2025-08-06T18:41:02.436Z",
+      "id": "CnAWaNQFQydZCLwm",
+      "name": "conversão"
+    },
+    {
+      "createdAt": "2025-08-06T18:41:05.219Z",
+      "updatedAt": "2025-08-06T18:41:05.219Z",
+      "id": "JI0xrBzLNHeMNIXf",
+      "name": "autoshop"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-07T14:09:33.024Z",
+  "versionId": "4533349f-22e7-482c-9ae4-9dd1d508bc9f"
+}
